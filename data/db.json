@@ -1,0 +1,276 @@
+{
+  "accounts": [
+    {
+      "id": "user-resident-1",
+      "email": "alex.rivera@oakridge.com",
+      "password": "Securepass123!",
+      "profile": {
+        "id": "user-resident-1",
+        "name": "Alex Walter",
+        "email": "alex.rivera@oakridge.com",
+        "role": "resident",
+        "apartment_id": "Oakridge Heights, Apt 4B",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-08-19T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "user-staff-1",
+      "email": "graham.garette@oakridge.com",
+      "password": "Securepass123!",
+      "profile": {
+        "id": "user-staff-1",
+        "name": "Graham Garette",
+        "email": "graham.garette@oakridge.com",
+        "role": "maintenance",
+        "apartment_id": "Oakridge Heights Facility Staff",
+        "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-07-20T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "user-1789750182797",
+      "email": "michael.scott@dundermifflin.com",
+      "password": "MyOfficePass2026!",
+      "profile": {
+        "id": "user-1789750182797",
+        "name": "Michael Scott",
+        "email": "michael.scott@dundermifflin.com",
+        "role": "resident",
+        "apartment_id": "Oakridge Heights, Apt 4B",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-09-18T16:49:42.797Z"
+      }
+    },
+    {
+      "id": "user-1789750198540",
+      "email": "dwight.schrute@dundermifflin.com",
+      "password": "BeetFarming2026!",
+      "profile": {
+        "id": "user-1789750198540",
+        "name": "Dwight Schrute",
+        "email": "dwight.schrute@dundermifflin.com",
+        "role": "maintenance",
+        "apartment_id": "Oakridge Heights Facility Staff",
+        "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-09-18T16:49:58.540Z"
+      }
+    },
+    {
+      "id": "user-1789750508954",
+      "email": "kavir9434@gmail.com",
+      "password": "12341234",
+      "profile": {
+        "id": "user-1789750508954",
+        "name": "Kaviya Rajaram",
+        "email": "kavir9434@gmail.com",
+        "role": "resident",
+        "apartment_id": "Oakridge Heights, Apt 4B",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-09-18T16:55:08.954Z"
+      }
+    },
+    {
+      "id": "user-1789754153576",
+      "email": "bruce.wayne@gotham.com",
+      "password": "Batman2026!",
+      "profile": {
+        "id": "user-1789754153576",
+        "name": "Bruce Wayne",
+        "email": "bruce.wayne@gotham.com",
+        "role": "resident",
+        "apartment_id": "Oakridge Heights, Apt 4B",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-09-18T17:55:53.576Z"
+      }
+    },
+    {
+      "id": "user-1789754517857",
+      "email": "elaimaran17@gmail.com",
+      "password": "11111111",
+      "profile": {
+        "id": "user-1789754517857",
+        "name": "Maran",
+        "email": "elaimaran17@gmail.com",
+        "role": "resident",
+        "apartment_id": "Oakridge Heights, Apt 4B",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-09-18T18:01:57.857Z"
+      }
+    },
+    {
+      "id": "user-1789754995652",
+      "email": "resident_live_1789754990080@oakridge.com",
+      "password": "Spiderman2026!",
+      "profile": {
+        "id": "user-1789754995652",
+        "name": "Peter Parker",
+        "email": "resident_live_1789754990080@oakridge.com",
+        "role": "resident",
+        "apartment_id": "Oakridge Heights, Apt 4B",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-09-18T18:09:55.652Z"
+      }
+    },
+    {
+      "id": "user-1789755344655",
+      "email": "elamaran17@gmail.com",
+      "password": "12345678",
+      "profile": {
+        "id": "user-1789755344655",
+        "name": "Mr.Maran",
+        "email": "elamaran17@gmail.com",
+        "role": "resident",
+        "apartment_id": "Oakridge Heights, Apt 4B",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-09-18T18:15:44.655Z"
+      }
+    },
+    {
+      "id": "user-1789755773657",
+      "email": "divakarr042006@gmail.com",
+      "password": "12341234",
+      "profile": {
+        "id": "user-1789755773657",
+        "name": "Divakar",
+        "email": "divakarr042006@gmail.com",
+        "role": "resident",
+        "apartment_id": "Oakridge Heights, Apt 4B",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-09-18T18:34:09.244Z"
+      }
+    },
+    {
+      "id": "user-1789756222443",
+      "email": "resident_check_1789756218457@oakridge.com",
+      "password": "Ironman2026!",
+      "profile": {
+        "id": "user-1789756222443",
+        "name": "Tony Stark",
+        "email": "resident_check_1789756218457@oakridge.com",
+        "role": "resident",
+        "apartment_id": "Oakridge Heights, Apt 4B",
+        "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+        "created_at": "2026-09-18T18:30:22.443Z"
+      }
+    }
+  ],
+  "access_codes": [
+    {
+      "id": "code-res-1",
+      "code": "RESIDENT-01",
+      "role": "resident",
+      "apartment_id": "Oakridge Heights, Apt 4B",
+      "is_used": false
+    },
+    {
+      "id": "code-staff-1",
+      "code": "STAFF-01",
+      "role": "maintenance",
+      "apartment_id": "Oakridge Heights Facility Staff",
+      "is_used": false
+    },
+    {
+      "id": "code-res-2",
+      "code": "OAK-4B-RES",
+      "role": "resident",
+      "apartment_id": "Oakridge Heights, Apt 4B",
+      "is_used": false
+    },
+    {
+      "id": "code-staff-2",
+      "code": "OAK-STAFF-1",
+      "role": "maintenance",
+      "apartment_id": "Oakridge Heights Facility Staff",
+      "is_used": false
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue-1",
+      "resident_id": "user-resident-1",
+      "resident_name": "Alex Walter",
+      "title": "Water leakage under Tank",
+      "category": "Plumbing",
+      "description": "There is continuous water dripping under the main overhead storage tank on the roof. It is pooling near the edge.",
+      "location": "Apt 4B - Roof Top",
+      "photo_url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&auto=format&fit=crop&q=80",
+      "status": "viewed",
+      "submitted_at": "2026-09-17T18:00:00.000Z",
+      "viewed_at": "2026-09-17T19:00:00.000Z",
+      "in_progress_at": null,
+      "resolved_at": null,
+      "created_at": "2026-09-17T18:00:00.000Z",
+      "updated_at": "2026-09-17T19:00:00.000Z"
+    },
+    {
+      "id": "issue-2",
+      "resident_id": "user-resident-1",
+      "resident_name": "Alex Walter",
+      "title": "Broken staircase light",
+      "category": "Electrical",
+      "description": "The staircase light is not working, making the area dark and difficult to use, especially at night. Please check and repair the light as soon as possible.",
+      "location": "4th Floor Corridor - Stairwell B",
+      "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&auto=format&fit=crop&q=80",
+      "status": "in_progress",
+      "submitted_at": "2026-09-17T16:00:00.000Z",
+      "viewed_at": "2026-09-17T17:00:00.000Z",
+      "in_progress_at": "2026-09-18T10:00:00.000Z",
+      "resolved_at": null,
+      "created_at": "2026-09-17T16:00:00.000Z",
+      "updated_at": "2026-09-18T10:00:00.000Z"
+    },
+    {
+      "id": "issue-3",
+      "resident_id": "user-resident-1",
+      "resident_name": "Alex Walter",
+      "title": "Lift not working",
+      "category": "Electrical",
+      "description": "Lift No 3 is stuck on the ground floor with doors refusing to open automatically.",
+      "location": "Apt 2B - Lift No : 3",
+      "photo_url": null,
+      "status": "submitted",
+      "submitted_at": "2026-09-18T13:00:00.000Z",
+      "viewed_at": null,
+      "in_progress_at": null,
+      "resolved_at": null,
+      "created_at": "2026-09-18T13:00:00.000Z",
+      "updated_at": "2026-09-18T13:00:00.000Z"
+    },
+    {
+      "id": "issue-4",
+      "resident_id": "user-resident-2",
+      "resident_name": "Sarah Connor",
+      "title": "Lift shuddering & noisy",
+      "category": "Mechanical",
+      "description": "Lift No 4 is making unusual grinding sounds when descending between floors 3 and 1.",
+      "location": "Apt 1B - Lift No : 4",
+      "photo_url": null,
+      "status": "submitted",
+      "submitted_at": "2026-09-17T17:00:00.000Z",
+      "viewed_at": null,
+      "in_progress_at": null,
+      "resolved_at": null,
+      "created_at": "2026-09-17T17:00:00.000Z",
+      "updated_at": "2026-09-17T17:00:00.000Z"
+    },
+    {
+      "id": "issue-5",
+      "resident_id": "user-resident-1",
+      "resident_name": "Alex Walter",
+      "title": "Main lobby intercom static",
+      "category": "Electrical",
+      "description": "Intercom connection to gate is buzzing and inaudible.",
+      "location": "Apt 4B - Lift No : 4",
+      "photo_url": null,
+      "status": "resolved",
+      "submitted_at": "2026-09-13T10:00:00.000Z",
+      "viewed_at": "2026-09-14T09:00:00.000Z",
+      "in_progress_at": "2026-09-15T11:00:00.000Z",
+      "resolved_at": "2026-09-16T14:00:00.000Z",
+      "created_at": "2026-09-13T10:00:00.000Z",
+      "updated_at": "2026-09-16T14:00:00.000Z"
+    }
+  ],
+  "profiles": []
+}
