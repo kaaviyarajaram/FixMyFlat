@@ -76,9 +76,10 @@ export const SignUp: React.FC = () => {
   };
 
   return (
-    <div className="flex-1 flex flex-col justify-between px-6 py-6 sm:px-8 bg-white overflow-y-auto">
-      <div>
-        {/* Brand Logo */}
+    <div className="flex-1 flex flex-col items-center justify-center sm:p-6 md:p-8 w-full min-h-screen min-h-[100dvh]">
+      <div className="w-full max-w-md bg-white sm:rounded-3xl sm:border sm:border-slate-200/80 sm:shadow-xl px-6 py-8 sm:p-10 flex flex-col justify-between min-h-screen sm:min-h-0">
+        <div>
+          {/* Brand Logo */}
         <div className="flex items-center gap-2 pt-2 pb-5">
           <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-blue-600 text-white shadow-xs">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -270,5 +271,6 @@ export const SignUp: React.FC = () => {
         </Link>
       </div>
     </div>
-  );
+  </div>
+);
 };

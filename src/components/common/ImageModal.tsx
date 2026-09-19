@@ -17,7 +17,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ imageUrl, isOpen, onClos
       onClick={onClose}
     >
       <div
-        className="relative max-w-lg w-full bg-white rounded-3xl overflow-hidden shadow-2xl"
+        className="relative max-w-lg sm:max-w-2xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl"
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-4 border-b border-slate-100 bg-slate-50">
@@ -33,7 +33,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ imageUrl, isOpen, onClos
           </button>
         </div>
 
-        <div className="p-3 bg-black flex items-center justify-center min-h-[300px] max-h-[70vh] overflow-hidden">
+        <div className="p-3 bg-black flex items-center justify-center min-h-[260px] sm:min-h-[360px] max-h-[75vh] overflow-hidden">
           <img
             src={imageUrl}
             alt={title || 'Attachment'}

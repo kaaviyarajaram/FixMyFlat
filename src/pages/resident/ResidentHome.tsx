@@ -91,10 +91,10 @@ export const ResidentHome: React.FC = () => {
       {/* Top Bar */}
       <Header />
 
-      <main className="flex-1 px-5 pt-2 pb-6 space-y-4">
+      <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 space-y-4 sm:space-y-6">
         {/* User Profile Card */}
-        <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs flex items-center gap-3.5">
-          <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-slate-100 border border-slate-200">
+        <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-100 shadow-xs flex items-center gap-3.5 sm:gap-4">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex-shrink-0 bg-slate-100 border border-slate-200">
             <img
               src={
                 user?.avatar_url && !user.avatar_url.includes('unsplash')
@@ -106,10 +106,10 @@ export const ResidentHome: React.FC = () => {
             />
           </div>
           <div className="flex-1 min-w-0">
-            <h2 className="text-base font-extrabold text-slate-900 tracking-tight truncate">
+            <h2 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight truncate">
               {user?.name || 'Alex Walter'}
             </h2>
-            <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-0.5">
+            <div className="flex items-center gap-1.5 text-xs sm:text-sm text-slate-500 mt-0.5">
               <MapPin className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
               <span className="truncate">{user?.apartment_id || 'Oakridge Heights, Apt 4B'}</span>
             </div>
@@ -117,42 +117,42 @@ export const ResidentHome: React.FC = () => {
         </div>
 
         {/* 2 Metric Summary Cards */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5">
           {/* Active issues card */}
-          <div className="bg-[#FFFDF7] rounded-2xl p-4 border border-amber-100/80 shadow-2xs flex flex-col justify-between">
+          <div className="bg-[#FFFDF7] rounded-2xl p-4 sm:p-5 border border-amber-100/80 shadow-2xs flex flex-col justify-between">
             <div className="flex items-start justify-between">
-              <span className="text-xs font-bold text-amber-900/90 leading-tight">
+              <span className="text-xs sm:text-sm font-bold text-amber-900/90 leading-tight">
                 Active issues
               </span>
-              <div className="w-6 h-6 rounded-full bg-amber-100/90 flex items-center justify-center text-amber-700">
-                <AlertTriangle className="w-3.5 h-3.5" />
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-amber-100/90 flex items-center justify-center text-amber-700">
+                <AlertTriangle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
             </div>
-            <div className="mt-2.5">
-              <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
+            <div className="mt-2.5 sm:mt-3">
+              <span className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 {activeCount}
               </span>
-              <p className="text-[11px] font-semibold text-slate-400 mt-0.5">
+              <p className="text-[11px] sm:text-xs font-semibold text-slate-400 mt-0.5">
                 Pending maintenance
               </p>
             </div>
           </div>
 
           {/* Resolved card */}
-          <div className="bg-[#F6FDF9] rounded-2xl p-4 border border-emerald-100/80 shadow-2xs flex flex-col justify-between">
+          <div className="bg-[#F6FDF9] rounded-2xl p-4 sm:p-5 border border-emerald-100/80 shadow-2xs flex flex-col justify-between">
             <div className="flex items-start justify-between">
-              <span className="text-xs font-bold text-emerald-950/90 leading-tight">
+              <span className="text-xs sm:text-sm font-bold text-emerald-950/90 leading-tight">
                 Resolved
               </span>
-              <div className="w-6 h-6 rounded-full bg-emerald-100/90 flex items-center justify-center text-emerald-600">
-                <CheckCircle2 className="w-3.5 h-3.5" />
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-emerald-100/90 flex items-center justify-center text-emerald-600">
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
             </div>
-            <div className="mt-2.5">
-              <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
+            <div className="mt-2.5 sm:mt-3">
+              <span className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 {resolvedCount}
               </span>
-              <p className="text-[11px] font-semibold text-slate-400 mt-0.5">
+              <p className="text-[11px] sm:text-xs font-semibold text-slate-400 mt-0.5">
                 Closed this month
               </p>
             </div>
@@ -162,17 +162,17 @@ export const ResidentHome: React.FC = () => {
         {/* Primary Action: Report an issue */}
         <button
           onClick={() => navigate('/resident/report')}
-          className="w-full py-3.5 px-4 rounded-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-sm shadow-md shadow-blue-600/25 flex items-center justify-center gap-2 transition-all group"
+          className="w-full py-3.5 px-4 rounded-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-sm sm:text-base shadow-md shadow-blue-600/25 flex items-center justify-center gap-2 transition-all group"
         >
-          <Plus className="w-4 h-4 stroke-[3] transition-transform group-hover:rotate-90" />
+          <Plus className="w-4 h-4 sm:w-5 sm:h-5 stroke-[3] transition-transform group-hover:rotate-90" />
           <span>Report an issue</span>
         </button>
 
         {/* Filter Segmented Control */}
-        <div className="bg-slate-100/80 p-1 rounded-xl flex items-center gap-1 border border-slate-200/60">
+        <div className="bg-slate-100/80 p-1 sm:p-1.5 rounded-xl flex items-center gap-1 border border-slate-200/60">
           <button
             onClick={() => setFilter('all')}
-            className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${
+            className={`flex-1 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               filter === 'all'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-500 hover:text-slate-700'
@@ -182,7 +182,7 @@ export const ResidentHome: React.FC = () => {
           </button>
           <button
             onClick={() => setFilter('active')}
-            className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${
+            className={`flex-1 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               filter === 'active'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-500 hover:text-slate-700'
@@ -192,7 +192,7 @@ export const ResidentHome: React.FC = () => {
           </button>
           <button
             onClick={() => setFilter('resolved')}
-            className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${
+            className={`flex-1 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-lg transition-all ${
               filter === 'resolved'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-500 hover:text-slate-700'
@@ -236,7 +236,7 @@ export const ResidentHome: React.FC = () => {
               <div
                 key={issue.id}
                 onClick={() => navigate(`/resident/issues/${issue.id}`)}
-                className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs hover:border-blue-200 transition-all cursor-pointer group"
+                className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-100 shadow-xs hover:border-blue-200 hover:shadow-sm transition-all cursor-pointer group"
               >
                 {/* Top: Title & Status Badge */}
                 <div className="flex items-start justify-between gap-2">

@@ -124,24 +124,27 @@ export const ReportIssue: React.FC = () => {
   };
 
   return (
-    <div className="flex-1 flex flex-col bg-white">
+    <div className="flex-1 flex flex-col bg-[#F8FAFC]">
       {/* Top Navigation Bar */}
-      <div className="relative flex items-center justify-between px-5 pt-3 pb-3 border-b border-slate-100 bg-white">
-        <button
-          type="button"
-          onClick={() => navigate('/resident')}
-          className="flex items-center gap-1 text-slate-800 hover:text-blue-600 transition-colors text-sm font-bold"
-        >
-          <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-          <span>Back</span>
-        </button>
-        <h1 className="text-base font-extrabold text-slate-900 tracking-tight">
-          Report an Issue
-        </h1>
-        <div className="w-12" /> {/* Balancing placeholder */}
+      <div className="w-full bg-white border-b border-slate-200/60 sticky top-0 z-30">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+          <button
+            type="button"
+            onClick={() => navigate('/resident')}
+            className="flex items-center gap-1 text-slate-800 hover:text-blue-600 transition-colors text-sm font-bold"
+          >
+            <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+            <span>Back</span>
+          </button>
+          <h1 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight">
+            Report an Issue
+          </h1>
+          <div className="w-12" /> {/* Balancing placeholder */}
+        </div>
       </div>
 
-      <main className="flex-1 px-5 py-5 overflow-y-auto">
+      <main className="flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 py-5 sm:py-8 overflow-y-auto">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-slate-100 sm:shadow-sm">
         {/* Error Feedback */}
         {error && (
           <div className="mb-4 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-start gap-2.5 animate-fade-in">
@@ -310,7 +313,8 @@ export const ReportIssue: React.FC = () => {
             </button>
           </div>
         </form>
-      </main>
-    </div>
-  );
+      </div>
+    </main>
+  </div>
+);
 };

@@ -109,32 +109,34 @@ export const ResidentIssueDetails: React.FC = () => {
   return (
     <div className="flex-1 flex flex-col bg-[#F8FAFC] relative">
       {/* Top Navigation Bar */}
-      <div className="flex items-center justify-between px-5 pt-3 pb-3 border-b border-slate-100 bg-white">
-        <button
-          onClick={() => navigate('/resident')}
-          className="flex items-center gap-1 text-slate-800 hover:text-blue-600 transition-colors text-sm font-bold"
-        >
-          <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-          <span>Back</span>
-        </button>
-        <h1 className="text-base font-extrabold text-slate-900 tracking-tight">
-          Issue Details
-        </h1>
-        <div className="w-12" />
+      <div className="w-full bg-white border-b border-slate-200/60 sticky top-0 z-30">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+          <button
+            onClick={() => navigate('/resident')}
+            className="flex items-center gap-1 text-slate-800 hover:text-blue-600 transition-colors text-sm font-bold"
+          >
+            <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+            <span>Back</span>
+          </button>
+          <h1 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight">
+            Issue Details
+          </h1>
+          <div className="w-12" />
+        </div>
       </div>
 
       {/* Floating Toast Notification */}
       {toastMessage && (
-        <div className="absolute top-14 left-1/2 -translate-x-1/2 z-40 bg-slate-900 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg flex items-center gap-2 animate-fade-in">
+        <div className="fixed top-16 left-1/2 -translate-x-1/2 z-40 bg-slate-900 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg flex items-center gap-2 animate-fade-in">
           <RefreshCw className="w-3.5 h-3.5 text-emerald-400" />
           <span>{toastMessage}</span>
         </div>
       )}
 
       {/* Content */}
-      <main className="flex-1 px-5 py-4 space-y-4 overflow-y-auto pb-20">
+      <main className="flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6 overflow-y-auto pb-24">
         {/* Issue Details Card */}
-        <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs">
+        <div className="bg-white rounded-2xl p-4 sm:p-6 border border-slate-100 shadow-xs">
           {/* Header Row: Title & Badge */}
           <div className="flex items-start justify-between gap-3">
             <h2 className="text-base font-extrabold text-slate-900 tracking-tight leading-snug">

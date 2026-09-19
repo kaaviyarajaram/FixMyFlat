@@ -12,7 +12,6 @@ import {
   Eye, 
   CheckCircle2, 
   RefreshCw, 
-  Wrench,
   Search
 } from 'lucide-react';
 
@@ -101,10 +100,10 @@ export const MaintenanceDashboard: React.FC = () => {
       {/* Top Header */}
       <Header />
 
-      <main className="flex-1 px-5 pt-2 pb-6 space-y-4">
+      <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 space-y-4 sm:space-y-6">
         {/* Staff Profile Card matching Figma */}
-        <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs flex items-center gap-3.5">
-          <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-slate-100 border border-slate-200">
+        <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-100 shadow-xs flex items-center gap-3.5 sm:gap-4">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex-shrink-0 bg-slate-100 border border-slate-200">
             <img
               src={
                 user?.avatar_url && !user.avatar_url.includes('unsplash')
@@ -116,10 +115,10 @@ export const MaintenanceDashboard: React.FC = () => {
             />
           </div>
           <div className="flex-1 min-w-0">
-            <h2 className="text-base font-extrabold text-slate-900 tracking-tight truncate">
+            <h2 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight truncate">
               {user?.name || 'Graham Garette'}
             </h2>
-            <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-0.5">
+            <div className="flex items-center gap-1.5 text-xs sm:text-sm text-slate-500 mt-0.5">
               <Building2 className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
               <span className="truncate">{user?.apartment_id || 'Oakridge Heights, Apt 4B'}</span>
             </div>
@@ -127,62 +126,62 @@ export const MaintenanceDashboard: React.FC = () => {
         </div>
 
         {/* 3 Metric Cards Grid matching Figma */}
-        <div className="grid grid-cols-3 gap-2 sm:gap-3">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-5">
           {/* Active issue card */}
-          <div className="bg-[#FFFDF7] rounded-2xl p-3 border border-amber-100/90 shadow-2xs flex flex-col justify-between">
+          <div className="bg-[#FFFDF7] rounded-2xl p-3 sm:p-5 border border-amber-100/90 shadow-2xs flex flex-col justify-between">
             <div className="flex items-start justify-between">
-              <span className="text-[11px] font-bold text-amber-900 leading-tight">
+              <span className="text-[11px] sm:text-sm font-bold text-amber-900 leading-tight">
                 Active issue
               </span>
-              <div className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 flex-shrink-0">
-                <AlertTriangle className="w-3 h-3" />
+              <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 flex-shrink-0">
+                <AlertTriangle className="w-3 h-3 sm:w-4 sm:h-4" />
               </div>
             </div>
-            <div className="mt-2">
-              <span className="text-xl font-extrabold text-slate-900">
+            <div className="mt-2 sm:mt-3">
+              <span className="text-xl sm:text-3xl font-extrabold text-slate-900">
                 {activeCount}
               </span>
-              <p className="text-[10px] font-semibold text-slate-400 mt-0.5 leading-tight">
+              <p className="text-[10px] sm:text-xs font-semibold text-slate-400 mt-0.5 leading-tight">
                 Pending maintenance
               </p>
             </div>
           </div>
 
           {/* Pending view card */}
-          <div className="bg-[#F4F9FF] rounded-2xl p-3 border border-blue-100/90 shadow-2xs flex flex-col justify-between">
+          <div className="bg-[#F4F9FF] rounded-2xl p-3 sm:p-5 border border-blue-100/90 shadow-2xs flex flex-col justify-between">
             <div className="flex items-start justify-between">
-              <span className="text-[11px] font-bold text-blue-900 leading-tight">
+              <span className="text-[11px] sm:text-sm font-bold text-blue-900 leading-tight">
                 Pending view
               </span>
-              <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
-                <Eye className="w-3 h-3" />
+              <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
+                <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
               </div>
             </div>
-            <div className="mt-2">
-              <span className="text-xl font-extrabold text-slate-900">
+            <div className="mt-2 sm:mt-3">
+              <span className="text-xl sm:text-3xl font-extrabold text-slate-900">
                 {pendingViewCount}
               </span>
-              <p className="text-[10px] font-semibold text-slate-400 mt-0.5 leading-tight">
+              <p className="text-[10px] sm:text-xs font-semibold text-slate-400 mt-0.5 leading-tight">
                 Needs review
               </p>
             </div>
           </div>
 
           {/* Resolved card */}
-          <div className="bg-[#F6FDF9] rounded-2xl p-3 border border-emerald-100/90 shadow-2xs flex flex-col justify-between">
+          <div className="bg-[#F6FDF9] rounded-2xl p-3 sm:p-5 border border-emerald-100/90 shadow-2xs flex flex-col justify-between">
             <div className="flex items-start justify-between">
-              <span className="text-[11px] font-bold text-emerald-950 leading-tight">
+              <span className="text-[11px] sm:text-sm font-bold text-emerald-950 leading-tight">
                 Resolved
               </span>
-              <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 flex-shrink-0">
-                <CheckCircle2 className="w-3 h-3" />
+              <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 flex-shrink-0">
+                <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4" />
               </div>
             </div>
-            <div className="mt-2">
-              <span className="text-xl font-extrabold text-slate-900">
+            <div className="mt-2 sm:mt-3">
+              <span className="text-xl sm:text-3xl font-extrabold text-slate-900">
                 {resolvedCount}
               </span>
-              <p className="text-[10px] font-semibold text-slate-400 mt-0.5 leading-tight">
+              <p className="text-[10px] sm:text-xs font-semibold text-slate-400 mt-0.5 leading-tight">
                 Closed this month
               </p>
             </div>
@@ -197,16 +196,16 @@ export const MaintenanceDashboard: React.FC = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by title, location or category..."
-            className="w-full pl-10 pr-4 py-2 bg-white border border-slate-200/90 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-600"
+            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200/90 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-600 shadow-2xs"
           />
         </div>
 
         {/* Filter Tabs matching Figma horizontal scrollable pills */}
         <div className="overflow-x-auto no-scrollbar py-0.5 -mx-1 px-1">
-          <div className="flex items-center gap-1.5 p-1 bg-slate-100/80 rounded-xl border border-slate-200/60 w-max min-w-full">
+          <div className="flex items-center gap-1.5 p-1 sm:p-1.5 bg-slate-100/80 rounded-xl border border-slate-200/60 w-max min-w-full">
             <button
               onClick={() => setFilter('all')}
-              className={`px-3 py-1.5 text-xs font-bold rounded-lg whitespace-nowrap transition-all ${
+              className={`px-3 py-1.5 text-xs sm:text-sm font-bold rounded-lg whitespace-nowrap transition-all ${
                 filter === 'all'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-slate-500 hover:text-slate-700'
@@ -216,7 +215,7 @@ export const MaintenanceDashboard: React.FC = () => {
             </button>
             <button
               onClick={() => setFilter('submitted')}
-              className={`px-3 py-1.5 text-xs font-bold rounded-lg whitespace-nowrap transition-all ${
+              className={`px-3 py-1.5 text-xs sm:text-sm font-bold rounded-lg whitespace-nowrap transition-all ${
                 filter === 'submitted'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-slate-500 hover:text-slate-700'
@@ -226,7 +225,7 @@ export const MaintenanceDashboard: React.FC = () => {
             </button>
             <button
               onClick={() => setFilter('viewed')}
-              className={`px-3 py-1.5 text-xs font-bold rounded-lg whitespace-nowrap transition-all ${
+              className={`px-3 py-1.5 text-xs sm:text-sm font-bold rounded-lg whitespace-nowrap transition-all ${
                 filter === 'viewed'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-slate-500 hover:text-slate-700'
@@ -236,7 +235,7 @@ export const MaintenanceDashboard: React.FC = () => {
             </button>
             <button
               onClick={() => setFilter('in_progress')}
-              className={`px-3 py-1.5 text-xs font-bold rounded-lg whitespace-nowrap transition-all ${
+              className={`px-3 py-1.5 text-xs sm:text-sm font-bold rounded-lg whitespace-nowrap transition-all ${
                 filter === 'in_progress'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-slate-500 hover:text-slate-700'
@@ -246,7 +245,7 @@ export const MaintenanceDashboard: React.FC = () => {
             </button>
             <button
               onClick={() => setFilter('resolved')}
-              className={`px-3 py-1.5 text-xs font-bold rounded-lg whitespace-nowrap transition-all ${
+              className={`px-3 py-1.5 text-xs sm:text-sm font-bold rounded-lg whitespace-nowrap transition-all ${
                 filter === 'resolved'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-slate-500 hover:text-slate-700'
@@ -258,15 +257,15 @@ export const MaintenanceDashboard: React.FC = () => {
         </div>
 
         {/* Issue Cards */}
-        <div className="space-y-3 pt-1">
+        <div className="space-y-3 sm:space-y-4 pt-1">
           {loading ? (
             <div className="py-12 flex flex-col items-center justify-center text-slate-400">
               <RefreshCw className="w-6 h-6 animate-spin text-blue-600 mb-2" />
               <p className="text-xs font-medium">Loading issues...</p>
             </div>
           ) : filteredIssues.length === 0 ? (
+            /* Empty State */
             <div className="bg-white rounded-2xl p-8 border border-slate-100 text-center shadow-xs">
-              <Wrench className="w-10 h-10 text-slate-300 mx-auto mb-2" />
               <h3 className="text-sm font-bold text-slate-900">No issues found</h3>
               <p className="text-xs text-slate-500 mt-1">
                 There are no issues matching the current status filter.
@@ -277,7 +276,7 @@ export const MaintenanceDashboard: React.FC = () => {
               <div
                 key={issue.id}
                 onClick={() => navigate(`/maintenance/issues/${issue.id}`)}
-                className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs hover:border-blue-200 transition-all cursor-pointer group"
+                className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-100 shadow-xs hover:border-blue-200 hover:shadow-sm transition-all cursor-pointer group"
               >
                 {/* Top: Title & Status Badge */}
                 <div className="flex items-start justify-between gap-2">

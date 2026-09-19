@@ -137,22 +137,24 @@ export const MaintenanceIssueDetails: React.FC = () => {
   return (
     <div className="flex-1 flex flex-col bg-[#F8FAFC]">
       {/* Top Bar */}
-      <div className="flex items-center justify-between px-5 pt-3 pb-3 border-b border-slate-100 bg-white">
-        <button
-          onClick={() => navigate('/maintenance')}
-          className="flex items-center gap-1 text-slate-800 hover:text-blue-600 transition-colors text-sm font-bold"
-        >
-          <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-          <span>Back</span>
-        </button>
-        <h1 className="text-base font-extrabold text-slate-900 tracking-tight">
-          Issue Details
-        </h1>
-        <div className="w-12" />
+      <div className="w-full bg-white border-b border-slate-200/60 sticky top-0 z-30">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+          <button
+            onClick={() => navigate('/maintenance')}
+            className="flex items-center gap-1 text-slate-800 hover:text-blue-600 transition-colors text-sm font-bold"
+          >
+            <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+            <span>Back</span>
+          </button>
+          <h1 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight">
+            Issue Details
+          </h1>
+          <div className="w-12" />
+        </div>
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 px-5 py-4 space-y-4 overflow-y-auto pb-6">
+      <main className="flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6 overflow-y-auto pb-10">
         {/* Feedback Alert */}
         {feedback && (
           <div
@@ -172,7 +174,7 @@ export const MaintenanceIssueDetails: React.FC = () => {
         )}
 
         {/* Issue Card */}
-        <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs">
+        <div className="bg-white rounded-2xl p-4 sm:p-6 border border-slate-100 shadow-xs">
           {/* Header: Title & Status Badge */}
           <div className="flex items-start justify-between gap-3">
             <h2 className="text-base font-extrabold text-slate-900 tracking-tight leading-snug">
