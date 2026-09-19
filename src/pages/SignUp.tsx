@@ -50,14 +50,21 @@ export const SignUp: React.FC = () => {
     try {
       const res = await signup(name, email, password, accessCode);
       if (res.success && res.role) {
-        setSuccessMsg(`Account created successfully as ${res.role === 'resident' ? 'Resident' : 'Maintenance Staff'}! Redirecting...`);
-        setTimeout(() => {
-          if (res.role === 'maintenance') {
-            navigate('/maintenance');
-          } else {
-            navigate('/resident');
-          }
-        }, 1200);
+        if (res.requiresEmailConfirmation) {
+          setSuccessMsg(res.message || 'Account created! Please check your email for the confirmation link.');
+          setTimeout(() => {
+            navigate('/login');
+          }, 3000);
+        } else {
+          setSuccessMsg(`Account created successfully as ${res.role === 'resident' ? 'Resident' : 'Maintenance Staff'}! Redirecting...`);
+          setTimeout(() => {
+            if (res.role === 'maintenance') {
+              navigate('/maintenance');
+            } else {
+              navigate('/resident');
+            }
+          }, 1200);
+        }
       } else {
         setError(res.error || 'Failed to create account. Please check your access code.');
       }
@@ -238,7 +245,7 @@ export const SignUp: React.FC = () => {
             </div>
             <p className="text-[11px] text-slate-400 mt-1 pl-1 flex items-center gap-1">
               <Info className="w-3 h-3 text-blue-500" />
-              <span>Use the access code given by your apartment team</span>
+              <span>Enter the access code you received.</span>
             </p>
           </div>
 
