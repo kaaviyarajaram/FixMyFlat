@@ -3,6 +3,29 @@ import { UserProfile, UserRole } from '../types';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import { DataService } from '../lib/dataService';
 
+// Helper to generate a clean, personalized initials avatar with unique colors
+export const getInitialsAvatar = (name: string, _role?: UserRole): string => {
+  const cleanName = (name || 'User').trim();
+  const colors = [
+    '2563eb', // Blue
+    '7c3aed', // Purple
+    '059669', // Emerald
+    'd97706', // Amber
+    'dc2626', // Red
+    '0891b2', // Cyan
+    '4f46e5', // Indigo
+    'db2777', // Pink
+  ];
+  let hash = 0;
+  for (let i = 0; i < cleanName.length; i++) {
+    hash = cleanName.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const colorIndex = Math.abs(hash) % colors.length;
+  const bg = colors[colorIndex];
+
+  return `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanName)}&background=${bg}&color=fff&bold=true&size=150&rounded=true`;
+};
+
 interface AuthContextType {
   user: UserProfile | null;
   loading: boolean;
@@ -56,8 +79,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               name: meta.full_name || session.user.email?.split('@')[0] || 'User',
               email: session.user.email || '',
               role: userRole,
-              apartment_id: meta.apartment_id || (userRole === 'resident' ? 'Oakridge Heights, Apt 4B' : 'Oakridge Heights Facility Staff'),
-              avatar_url: meta.avatar_url,
+              avatar_url: meta.avatar_url || getInitialsAvatar(meta.full_name || session.user.email?.split('@')[0] || 'User', userRole),
               created_at: session.user.created_at || new Date().toISOString(),
             };
             profile = await DataService.saveProfile(newProfile);
@@ -155,9 +177,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           email: cleanEmail,
           role: userRole,
           apartment_id: meta.apartment_id || (userRole === 'resident' ? 'Oakridge Heights, Apt 4B' : 'Oakridge Heights Facility Staff'),
-          avatar_url: meta.avatar_url || (userRole === 'resident'
-            ? 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'
-            : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'),
+          avatar_url: meta.avatar_url || getInitialsAvatar(meta.full_name || cleanEmail.split('@')[0], userRole),
           created_at: data.user.created_at || new Date().toISOString(),
         };
         profile = await DataService.saveProfile(newProfile);
@@ -222,10 +242,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const assignedApt =
       codeValidation.apartment_id ||
       (assignedRole === 'resident' ? 'Oakridge Heights, Apt 4B' : 'Oakridge Heights Facility Staff');
-    const avatarUrl =
-      assignedRole === 'resident'
-        ? 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'
-        : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80';
+    const avatarUrl = getInitialsAvatar(cleanName, assignedRole);
 
     // 3. Register user with Supabase Auth
     try {

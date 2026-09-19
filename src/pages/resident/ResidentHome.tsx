@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth, getInitialsAvatar } from '../../context/AuthContext';
 import { DataService } from '../../lib/dataService';
 import { Issue } from '../../types';
 import { Header } from '../../components/common/Header';
@@ -96,7 +96,11 @@ export const ResidentHome: React.FC = () => {
         <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-xs flex items-center gap-3.5">
           <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-slate-100 border border-slate-200">
             <img
-              src={user?.avatar_url || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'}
+              src={
+                user?.avatar_url && !user.avatar_url.includes('unsplash')
+                  ? user.avatar_url
+                  : getInitialsAvatar(user?.name || 'Resident', 'resident')
+              }
               alt={user?.name || 'Resident'}
               className="w-full h-full object-cover"
             />

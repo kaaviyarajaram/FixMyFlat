@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import { User, LogOut, ShieldCheck, Home } from 'lucide-react';
+import { useAuth, getInitialsAvatar } from '../../context/AuthContext';
+import { LogOut, ShieldCheck, Home } from 'lucide-react';
 
 interface HeaderProps {
   showRoleBadge?: boolean;
@@ -74,10 +74,14 @@ export const Header: React.FC<HeaderProps> = ({ showRoleBadge = true }) => {
             className="w-9 h-9 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/20"
             title="Profile & Settings"
           >
-            {user?.avatar_url ? (
+            {user?.avatar_url && !user.avatar_url.includes('unsplash') ? (
               <img src={user.avatar_url} alt={user.name} className="w-full h-full rounded-full object-cover" />
             ) : (
-              <User className="w-4 h-4 text-slate-600" />
+              <img
+                src={getInitialsAvatar(user?.name || 'User', user?.role)}
+                alt={user?.name || 'User'}
+                className="w-full h-full rounded-full object-cover"
+              />
             )}
           </button>
 
