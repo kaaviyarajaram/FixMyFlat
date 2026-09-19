@@ -39,8 +39,38 @@ const ProtectedRoute: React.FC<{
   return <>{children}</>;
 };
 
-// Root Redirector - always opens the Login page first
+// Public Route Guard - if already logged in, redirect directly to their dashboard
+const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="flex-1 flex items-center justify-center p-8">
+        <div className="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin" />
+      </div>
+    );
+  }
+
+  if (user) {
+    return <Navigate to={user.role === 'maintenance' ? '/maintenance' : '/resident'} replace />;
+  }
+
+  return <>{children}</>;
+};
+
+// Root Redirector - checks auth status before redirecting
 const RootRedirect: React.FC = () => {
+  const { user, loading } = useAuth();
+  if (loading) {
+    return (
+      <div className="flex-1 flex items-center justify-center p-8">
+        <div className="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin" />
+      </div>
+    );
+  }
+  if (user) {
+    return <Navigate to={user.role === 'maintenance' ? '/maintenance' : '/resident'} replace />;
+  }
   return <Navigate to="/login" replace />;
 };
 
@@ -50,9 +80,23 @@ export const App: React.FC = () => {
       <BrowserRouter>
         <MobileFrame>
           <Routes>
-            {/* Public Routes */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
+            {/* Public Routes - guarded against logged in users */}
+            <Route
+              path="/login"
+              element={
+                <PublicRoute>
+                  <Login />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/signup"
+              element={
+                <PublicRoute>
+                  <SignUp />
+                </PublicRoute>
+              }
+            />
 
             {/* Resident Protected Routes */}
             <Route

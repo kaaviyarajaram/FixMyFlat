@@ -53,15 +53,15 @@ export const SignUp: React.FC = () => {
         if (res.requiresEmailConfirmation) {
           setSuccessMsg(res.message || 'Account created! Please check your email for the confirmation link.');
           setTimeout(() => {
-            navigate('/login');
+            navigate('/login', { replace: true });
           }, 3000);
         } else {
           setSuccessMsg(`Account created successfully as ${res.role === 'resident' ? 'Resident' : 'Maintenance Staff'}! Redirecting...`);
           setTimeout(() => {
             if (res.role === 'maintenance') {
-              navigate('/maintenance');
+              navigate('/maintenance', { replace: true });
             } else {
-              navigate('/resident');
+              navigate('/resident', { replace: true });
             }
           }, 1200);
         }
@@ -265,7 +265,7 @@ export const SignUp: React.FC = () => {
       {/* Footer link to Login */}
       <div className="pt-6 pb-2 text-center text-xs text-slate-500">
         <span>Already have an account? </span>
-        <Link to="/login" className="text-blue-600 font-bold hover:underline ml-1">
+        <Link to="/login" replace className="text-blue-600 font-bold hover:underline ml-1">
           Login
         </Link>
       </div>

@@ -29,9 +29,9 @@ export const Login: React.FC = () => {
       const res = await login(email, password);
       if (res.success && res.role) {
         if (res.role === 'maintenance') {
-          navigate('/maintenance');
+          navigate('/maintenance', { replace: true });
         } else {
-          navigate('/resident');
+          navigate('/resident', { replace: true });
         }
       } else {
         setError(res.error || 'Invalid credentials. Please check your email and password.');
@@ -166,7 +166,7 @@ export const Login: React.FC = () => {
       {/* Footer link to Sign up */}
       <div className="pt-6 pb-2 text-center text-xs text-slate-500">
         <span>Don't have an account? </span>
-        <Link to="/signup" className="text-blue-600 font-bold hover:underline ml-1">
+        <Link to="/signup" replace className="text-blue-600 font-bold hover:underline ml-1">
           Sign up
         </Link>
       </div>
