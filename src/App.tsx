@@ -39,64 +39,15 @@ const ProtectedRoute: React.FC<{
   return <>{children}</>;
 };
 
-// Public Route Guard - if already logged in, redirect directly to their dashboard
-const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { user, loading } = useAuth();
-
-  if (loading) {
-    return (
-      <div className="flex-1 flex items-center justify-center p-8">
-        <div className="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin" />
-      </div>
-    );
-  }
-
-  if (user) {
-    return <Navigate to={user.role === 'maintenance' ? '/maintenance' : '/resident'} replace />;
-  }
-
-  return <>{children}</>;
-};
-
-// Root Redirector - checks auth status before redirecting
-const RootRedirect: React.FC = () => {
-  const { user, loading } = useAuth();
-  if (loading) {
-    return (
-      <div className="flex-1 flex items-center justify-center p-8">
-        <div className="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin" />
-      </div>
-    );
-  }
-  if (user) {
-    return <Navigate to={user.role === 'maintenance' ? '/maintenance' : '/resident'} replace />;
-  }
-  return <Navigate to="/login" replace />;
-};
-
 export const App: React.FC = () => {
   return (
     <AuthProvider>
       <BrowserRouter>
         <MobileFrame>
           <Routes>
-            {/* Public Routes - guarded against logged in users */}
-            <Route
-              path="/login"
-              element={
-                <PublicRoute>
-                  <Login />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="/signup"
-              element={
-                <PublicRoute>
-                  <SignUp />
-                </PublicRoute>
-              }
-            />
+            {/* Public Routes */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
 
             {/* Resident Protected Routes */}
             <Route
@@ -142,9 +93,9 @@ export const App: React.FC = () => {
               }
             />
 
-            {/* Root and Catch-All */}
-            <Route path="/" element={<RootRedirect />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* Root and Catch-All routes always go to /login */}
+            <Route path="/" element={<Navigate to="/login" replace />} />
+            <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </MobileFrame>
       </BrowserRouter>
